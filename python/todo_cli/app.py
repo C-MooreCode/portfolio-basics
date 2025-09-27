@@ -9,7 +9,14 @@ elif cmd == "list":
         status = "✓" if x["done"] else "·"
         print(f"{i}. [{status}] {x['t']}")
 elif cmd == "done":
-    i = int(args[0]) - 1; tasks[i]["done"] = True
+    try:
+        i = int(args[0]) - 1
+        if 0 <= i < len(tasks):
+            tasks[i]["done"] = True
+        else:
+            print("Invalid task number")
+    except (ValueError, IndexError):
+        print("Usage: done <number>")
 else:
     print("usage: add <task> | list | done <n>")
 json.dump(tasks, open(DB,"w"), indent=2)
