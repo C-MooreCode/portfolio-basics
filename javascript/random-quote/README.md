@@ -1,7 +1,7 @@
 # Random Quote Generator
 
 **Language:** JavaScript  
-**Goal:** <one-sentence problem>  
+**Goal:** A button that shows a random quote on the page when clicked.  
 
 ## Features Demonstrated
 - Arrays (storing a list of quotes)
